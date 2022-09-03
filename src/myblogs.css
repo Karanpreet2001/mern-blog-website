@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600;700&family=Nunito:ital,wght@0,400;1,300;1,400&display=swap');
+
+.wrapper{
+  margin: 10px;
+  
+  display: flex;
+
+}
+.wrapperBlog{
+
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+
+}
+ .eachMyBlog{
+  width: 28%;
+  margin-left: 25px;
+  margin-top: 5%;
+  margin-right: 25px;
+}
+
+.myBlogImg{
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.myTopic{
+  text-align: center;
+  font-size: 12px;
+  color: rgb(164, 162, 162);
+  font-weight: 500;
+}
+.myTitle{
+  text-align: center;
+  padding: 0%;
+  margin: 0%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+ 
+.myContent{
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  word-spacing: 2px;
+  margin-top: 2%;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+  
+  
+}
+ 

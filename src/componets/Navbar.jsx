@@ -9,7 +9,7 @@ const NavBar = () => {
 
         <nav className="linkList">
             <li><a href="#" className="linkList-pointer">Blogs</a></li>
-            <li><a href="#" className="linkList-pointer">About</a></li>
+            <li><a href="#" className="linkList-pointer">My Blogs</a></li>
             <li><a href="#" className="linkList-pointer">Contact</a></li>
             <li><a href="#" className="linkList-pointer">Write</a></li>
             <li><a href="#" className="linkList-pointer">Logout</a></li>
