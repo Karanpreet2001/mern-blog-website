@@ -5,6 +5,7 @@ import Login from './Login';
 import Home from './Home';
 import MyBlobs from './MyBlogs';
 import WriteBlog from './WriteBlog';
+import Registration from './Registration';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route path= "/login" element={<Login/>}/>
           <Route path= "/myblogs" element={<MyBlobs/>}/>
           <Route path= "/write_blog" element={<WriteBlog/>}/>
+          <Route path= "/register" element={<Registration/>}/>
+
 
         </Route>
 

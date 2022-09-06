@@ -6,21 +6,21 @@ const WriteBlog = () => {
         <>
         <NavBar/>
 
-        <div>
-            <div>
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-online-plant-delivery-1638314748.jpg?crop=1.00xw:0.755xh;0,0.139xh&resize=1200:*" alt="" srcset="" />
+        <div className="writeBlogContainer">
+            <div className="imgChoose">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-online-plant-delivery-1638314748.jpg?crop=1.00xw:0.755xh;0,0.139xh&resize=1200:*" alt="" className="chooseAPhoto"/>
             </div>
             <from className="blogForm">
 
 
             <div className="formInput">
-            <label htmlFor="title">Title</label>    
-            <input type="text" name="title" />
+            <input type="text" name="title" placeholder="Title"/>
             </div>
 
             <div className="formInput">
-            <label htmlFor="topic">Topic</label>    
             <select>
+            <option disabled>Select a Topic</option>
+                
                 <option>Music|Life</option>
                 <option>Style</option>
                 <option>Cinema</option>
@@ -33,8 +33,11 @@ const WriteBlog = () => {
             </div>
 
             <div className="formInput">
-            <label htmlFor="desc">Description</label>    
-            <input type="text" name="desc" />
+    
+            {/* <input type="text" name="desc" className="desc" placeholder="Description" /> */}
+            <textarea placeholder="Add Description" cols="30" rows="10" className="desc"></textarea>            </div>
+            <div className="newButton">
+            <button className="submit">Post</button>
             </div>
             </from>
         </div>
