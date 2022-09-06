@@ -3,4 +3,43 @@
  height: 100vh;
  background-image: url(https://www.athletadesk.com/wp-content/uploads/2016/08/join-background.jpg);
  
+ display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.registerForm{
+    background-color: white;
+    height: 60%;
+    width: 40%; 
+    padding: 0% 5%; 
+}
+.registerForm h2{
+    font-size: 25px;
+    color: rgb(109, 108, 108);
+    text-align: center;
+}
+.registerForm label{
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    color: grey;
+    width: 40%;
+    margin-top: 5px;
+}
+.registerForm input{
+    padding: 7px;
+    margin-left:  10px;
+    margin-right:  10px;
+ 
+
+    border: none;
+    width: 60%;
+    border-bottom: 1px solid gray;
+
+}
+.payInput::placeholder{
+    font-weight: 300;
+    opacity: .7;
+}
+
