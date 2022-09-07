@@ -1,4 +1,4 @@
-import NavBar from "./componets/Navbar";
+import NavBar from "../componets/Navbar";
 import "./myblogs.css";
 
 const MyBlobs = () => {

@@ -1,11 +1,10 @@
 import {Route, Routes} from  'react-router-dom';
 
-import NavBar from './componets/Navbar';
-import Login from './Login';
-import Home from './Home';
-import MyBlobs from './MyBlogs';
-import WriteBlog from './WriteBlog';
-import Registration from './Registration';
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import MyBlobs from './pages/MyBlogs';
+import WriteBlog from './pages/WriteBlog';
+import Registration from './pages/Registration';
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import NavBar from "./componets/Navbar";
+import NavBar from "../componets/Navbar";
 import "./writeblog.css";
 
 const WriteBlog = () => {

@@ -1,8 +1,8 @@
 
-import NavBar from "./componets/Navbar";
-import BlogBack from "./componets/BlobBack";
+import NavBar from "../componets/Navbar";
+import BlogBack from "../componets/BlobBack";
 import "./home.css";
-import Profile from "./componets/Profile";
+import Profile from "../componets/Profile";
 
 const Home = () => {
     return ( <>

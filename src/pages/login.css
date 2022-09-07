@@ -1,0 +1,68 @@
+.loginContainer{
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightcyan;
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+   
+}
+
+.wrapper{
+    background-color: white;
+    width: 65%;
+    height: 55%;
+    border-radius: 20px;
+    margin: 0%;
+
+}
+.logoDesign{
+   
+    
+    padding-top: 35px;
+    text-align: center;
+}
+.left{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.right{
+    flex: 1;
+    width: 80%;
+    padding: 30px;
+    background-color: rgb(105, 251, 202);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 00px 10px 10px 0px;
+}
+.leftImage{
+    width: 100%;
+}
+.login-username, .login-password{
+    margin-bottom: 5px;
+    width: 60%;
+    height: 20px;
+}
+.submit-login-form{
+    background-color: rgb(72, 154, 187);
+    padding: 6px 35px;
+    padding-bottom: 9px;
+    color: rgb(247, 248, 249);
+    font-weight: 600;
+    border: 1px solid rgb(57, 155, 155);
+    transition: all 0.3s ease-in-out;
+}
+.submit-login-form:hover{
+    border-radius: 8px;
+    background-color: rgb(53, 147, 184);
+    
+}
