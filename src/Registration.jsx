@@ -3,31 +3,34 @@ import "./registration.css";
 const Registration = () => {
     return ( <div className="registerContainer">
 
-
-        <form className="registerForm">
-    <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30164225/572.png" className="logoPic" alt="blog logo" />
+<div className="formControl">
+        <h1 className="logoDesign">.bl<span>o</span>g</h1>
 
             <h2>Registration</h2>
-                <label htmlFor="firstName">First Name</label>
-                <input type="text" name=""  />
+    <form className="registerForm">
 
-                <label htmlFor="lasttName">Last Name</label>
-                <input type="text" name=""  />
 
-                <label htmlFor="dateOfBirth">Date Of Birth</label>
-                <input type="date" name="" id="" />
+                <div className="flex1">
+                <input type="text" name="" placeholder="First Name" />
 
-                <label htmlFor="city">City</label>
-                <input type="city" name="" id="" />
+                <input type="text" name="" placeholder="Last Name" />
+                </div>
 
-                <label htmlFor="email">Email</label>
-                <input type="email" name=""  />
+                <div className="flex1">
+                <input type="date" name="" id="" placeholder="Date Of Birth"/>
 
-                <label htmlFor="Phone">Phone</label>
-                <input type="phone" name=""  />
+                <input type="city" name="" id="" placeholder="City"/>
+                </div>
 
+        
+                <input type="email" name=""  placeholder="Email"/>
+
+                <input type="phone" name=""  placeholder="Phone"/>
+            <div className="btn">
             <button className="submitForm">Submit</button>
+            </div>
         </form>
+        </div>
     </div> );
 }
  
