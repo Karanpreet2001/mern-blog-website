@@ -2,7 +2,7 @@
 
 .wrapper{
   margin: 10px;
-  
+  width: 100%;
   display: flex;
 
 }
@@ -42,6 +42,9 @@
   margin-top: 2%;
   margin-bottom: 1%;
 }
+.eachMyBlog h2{
+color: black;
+}
 
  
 .myContent{
@@ -52,7 +55,6 @@
   margin-top: 2%;
   padding-bottom: 0%;
   margin-bottom: 0%;
-  
-  
+   
 }
  

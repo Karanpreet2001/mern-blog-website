@@ -1,80 +1,73 @@
+
+
 .writeBlogContainer{
+    padding-top: 50px;
+    display:flex;
+
+}
+
+.writeForm{
+    position: relative;
+}
+
+.writeFormGroup{
+    margin-left: 150px;
     display: flex;
-   
-    
+    align-items: center;
 }
+.icon{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid black;
 
-.imgChoose{
-    width: 50%;
-}
-.chooseAPhoto{
-    width: 100%;
-    margin: 50px;
-}
-
-.blogForm{
-    width: 50%;
-    margin: 100px;
-    display: flex;
-    align-items:flex-start;
-    flex-direction: column;
-
-}
-
-.formInput{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-
-    
+    font-size: 20px;
+    color: grey;
+    font-weight: 500;
+    cursor: pointer;
 }
-
-
- 
-.formInput input, .formInput select, .formInput textarea{
-    width: 80%;
-    height: 35px;
-    margin-bottom: 10px;
+.writeInput{
+    font-size: 30px;
     border: none;
-    outline: transparent;
-    border: 1px solid gray;
-    border-radius: 7px;
-    padding-bottom: 0%
-    
-    
-}
- .formInput select{
-    height: 40px;
-    width: 81%;
-
-
-}
-.formInput textarea{
-    max-lines: 8;
-}
-
-.newButton{
+    padding: 20px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
-.submit{
-    width: 30%;
-    height: 40px;
-    /* color: transparent; */
-    background-color: transparent;
-    font-size: 16px;
-    background-color: blueviolet;
-    color: aliceblue;
-    border: 1px solid whitesmoke;
+.writeInput:focus{
+    outline: none;
+}
+.writeText{
+    font-style: 20px;
+    height: 200px;
     
 }
-.formInput .desc{
-    height: 80px;
+.writeImg{
+    margin-left: 150px;
+    width: 30vw;
+    height: 300px;
+    border-radius: 10px;
+    /* object-fit: cover; */
 }
+.writeSubmit{
+    /* position: absolute;
+    top: 20px;
+    right: 50px; */
+    color: white;
+    background-color: teal;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
 
 
-
+}
+.btnWriteSubmit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
