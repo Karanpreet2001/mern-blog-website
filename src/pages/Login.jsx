@@ -1,8 +1,47 @@
 
 import "./login.css";
 import {Link} from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
+
+function useInput(initialValue){
+
+  const [value, setValue] = useState(initialValue);
+
+  return [
+      {
+      value,
+      onChange : (e)=> setValue(e.target.value)
+      },
+      ()=>setValue(initialValue)
+  ]
+}
+  
 
 const Login = () => {
+
+  const [email, setEmail] = useInput("");
+  const [password, setPassword] = useInput("");
+
+
+  // useEffect(()=>{
+
+  // }, []);
+
+  const checkUser = async () =>{
+    console.log(email.value, password.value);
+    
+    const userLogin={
+      email: email.value,
+      password: password.value
+    }
+
+     const response = await axios.post("http://localhost:5000/api/userLogin",userLogin)
+     console.log(response.data);
+    
+  }
+
     return ( 
       <>
    
@@ -16,11 +55,13 @@ const Login = () => {
 
           <div className="right">
         <h1 className="logoDesign">.bl<span>o</span>g</h1>
-
-            <input type="text" name=""  className="login-username" placeholder="Username"/>
-            <input type="password" name="" className="login-password" placeholder="Password"/>
-            <submit className="submit-login-form">Submit</submit>
+        <form >
+            <input type="text" {...email}  className="login-username" placeholder="Username" />
+            <input type="password" {... password} name="" className="login-password" placeholder="Password" />
+            <submit className="submit-login-form" onClick={checkUser}>Submit</submit>
             <submit className="submit-login-form writeregister"><Link to="/register" style={{textDecoration: "none", color: "white"}} >Register</Link></submit>
+
+            </form>
 
           </div>
         </div>

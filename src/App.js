@@ -12,6 +12,12 @@ import axios from 'axios';
 function App() {
 
   const [allBlogs, setAllBlogs] = useState([]);
+  const [myBlogs, setMyBlogs] =useState([]);
+
+  let user = false;
+  
+
+  const userEmail = 'john@gmail.com';
 
   useEffect(()=>{
 
@@ -24,7 +30,15 @@ function App() {
 
   }, []);
 
-  const user = true;
+  useEffect(()=>{
+
+    axios.get("http://localhost:5000/api/allBlogs/"+userEmail)
+          .then(response => {setMyBlogs(response.data);
+               console.log(response.data)})
+          .catch(err=>console.log(err));
+  },[])
+
+
 
   return (
     
@@ -34,7 +48,7 @@ function App() {
         <Route path="/">
           <Route path= "/" element={user ? <Home allBlogs={allBlogs} />: <Login/>}/>
           <Route path= "/login" element={user ? <Home allBlogs={allBlogs}/>:<Login/>}/>
-          <Route path= "/myblogs" element={user ? <MyBlobs/>: <Login/>}/>
+          <Route path= "/myblogs" element={user ? <MyBlobs myBlogs = {myBlogs}/>: <Login/>}/>
           <Route path= "/write_blog" element={user ? <WriteBlog/>: <Login/>}/>
           <Route path= "/register" element={user ?<Home allBlogs={allBlogs}/>: <Registration/>}/>
         </Route>

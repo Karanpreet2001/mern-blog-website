@@ -1,48 +1,55 @@
 import NavBar from "../componets/Navbar";
 import "./myblogs.css";
 
-const MyBlobs = () => {
+const MyBlobs = ({myBlogs}) => {
+
+    const createTags =(tags)=>{
+
+        let resultTags = "|";
+
+        tags.forEach((element, index) => {
+            resultTags +=` ${element} |`;
+            // if(index !== tags.length)
+            // resultTags += "";
+
+        });
+
+        return resultTags;
+
+    }
+
+    const getDate = (date) =>{
+        
+        let datePosted = new Date(date);
+
+        let currDate = new Date();
+        let diff = Math.abs(currDate-datePosted);
+        const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24)); 
+
+        return diffDays+" days ago";
+    }
+
+
     return ( <>
     <NavBar/>
 
     <div className="wrapper">
 
     <div className='wrapperBlog'>
-        <div className="eachMyBlog">
-            <img className="myBlogImg" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-plants-for-a-garden-1586987711.jpg?crop=0.670xw:1.00xh;0,0&resize=640:*" alt="" srcset="" />
-             <div className="myTopic">Music | Life</div>
-             <h2 className="myTitle">Lorem ipsum dolor sit amet</h2>
-             <div className="myTopic"><i>1 hour ago</i></div>
-             <div className="myContent">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum iste vel 
-                illum ipsa reprehenderit illo. 
-                Veniam odio in, nemo repellendus aliquid accusantium illo recusandae? 
-                Magni repudiandae libero numquam ullam at!</div>     
-        </div>
 
-        <div className="eachMyBlog">
-            <img className="myBlogImg" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-plants-for-a-garden-1586987711.jpg?crop=0.670xw:1.00xh;0,0&resize=640:*" alt="" srcset="" />
-             <div className="myTopic">Music | Life</div>
-             <h2 className="myTitle">Lorem ipsum dolor sit amet</h2>
-             <div className="myTopic"><i>1 hour ago</i></div>
-             <div className="myContent">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum iste vel 
-                illum ipsa reprehenderit illo. 
-                Veniam odio in, nemo repellendus aliquid accusantium illo recusandae? 
-                Magni repudiandae libero numquam ullam at!</div>     
-        </div>
+        {
+                myBlogs.map((blogs)=>(
 
-        <div className="eachMyBlog">
-            <img className="myBlogImg" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-plants-for-a-garden-1586987711.jpg?crop=0.670xw:1.00xh;0,0&resize=640:*" alt="" srcset="" />
-             <div className="myTopic">Music | Life</div>
-             <h2 className="myTitle">Lorem ipsum dolor sit amet</h2>
-             <div className="myTopic"><i>1 hour ago</i></div>
-             <div className="myContent">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum iste vel 
-                illum ipsa reprehenderit illo. 
-                Veniam odio in, nemo repellendus aliquid accusantium illo recusandae? 
-                Magni repudiandae libero numquam ullam at!</div>     
-        </div>
-
-        
-       
+                    <div className="eachMyBlog" key={blogs._id}>
+                    <img className="myBlogImg" src={blogs.imgUrl} alt="" srcset="" />
+                     <div className="myTopic">{createTags(blogs.tags)}</div>
+                     <h2 className="myTitle">{blogs.title}</h2>
+                     <div className="myTopic"><i>{getDate(blogs.createdAt)}</i></div>
+                     <div className="myContent">{blogs.content}</div>     
+                </div>
+                ))
+        }
+   
     </div>
     
     </div>
