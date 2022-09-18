@@ -51,6 +51,13 @@
     gap: 20px;
     border-radius: 00px 10px 10px 0px;
 }
+.rightform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
 .leftImage{
     width: 90%;
     height: 100%;
@@ -70,6 +77,7 @@
     transition: all 0.4s ease-in-out;
     opacity: 0.9;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 .submit-login-form:hover{
     border-radius: 9px;

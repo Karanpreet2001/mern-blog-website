@@ -69,7 +69,7 @@ const Login = ({childToParent}) => {
 
           <div className="right">
         <h1 className="logoDesign">.bl<span>o</span>g</h1>
-        <form >
+        <form className="rightform" >
             <input type="text" {...email}  className="login-username" placeholder="Username" />
             <input type="password" {... password} name="" className="login-password" placeholder="Password" />
             <submit className="submit-login-form" onClick={checkUser}>Submit</submit>
