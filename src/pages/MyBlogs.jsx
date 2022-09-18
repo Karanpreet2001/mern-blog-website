@@ -37,7 +37,7 @@ const MyBlobs = ({myBlogs}) => {
 
     <div className='wrapperBlog'>
 
-        {
+        {   myBlogs ? (
                 myBlogs.map((blogs)=>(
 
                     <div className="eachMyBlog" key={blogs._id}>
@@ -48,6 +48,11 @@ const MyBlobs = ({myBlogs}) => {
                      <div className="myContent">{blogs.content}</div>     
                 </div>
                 ))
+        ): (
+            <h1 className="nothingToDisplay">You have not publish anything yet</h1>
+        )
+        
+        
         }
    
     </div>

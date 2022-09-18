@@ -14,7 +14,6 @@ const NavBar = () => {
         <nav className="linkList">
             <li><Link to = "/"  className="linkList-pointer">Blogs</Link></li>
             <li><Link to = "/myblogs"  className="linkList-pointer">My Blogs</Link></li>
-            <li><Link to = "/contact" className="linkList-pointer">Contact</Link></li>
             <li><Link to = "/write_blog" className="linkList-pointer">Write</Link></li>
             <li><Link to = "/login" className="linkList-pointer">{user && "Logout"}</Link></li>
 

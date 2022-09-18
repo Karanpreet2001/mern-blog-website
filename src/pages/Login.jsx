@@ -4,10 +4,13 @@ import {Link} from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import {useNavigate} from "react-router-dom";
+import Home from "./Home";
 
 function useInput(initialValue){
 
   const [value, setValue] = useState(initialValue);
+ 
 
   return [
       {
@@ -19,26 +22,37 @@ function useInput(initialValue){
 }
   
 
-const Login = () => {
+const Login = ({childToParent}) => {
 
   const [email, setEmail] = useInput("");
   const [password, setPassword] = useInput("");
+  const navigate = useNavigate();
 
 
-  // useEffect(()=>{
-
-  // }, []);
+ 
 
   const checkUser = async () =>{
-    console.log(email.value, password.value);
+    
     
     const userLogin={
       email: email.value,
       password: password.value
     }
 
-     const response = await axios.post("http://localhost:5000/api/userLogin",userLogin)
-     console.log(response.data);
+     const {data} = await axios.post("http://localhost:5000/api/userLogin",userLogin)
+     console.log(data, userLogin.email);
+     if(data === email.value){
+      // navigate("/", {state: userLogin.email});
+      const response = {
+        isResponse: true,
+        email: userLogin.email
+      }
+      childToParent(response);
+     }else{
+      console.log("false");
+     }
+
+     
     
   }
 

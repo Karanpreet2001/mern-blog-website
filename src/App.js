@@ -13,11 +13,22 @@ function App() {
 
   const [allBlogs, setAllBlogs] = useState([]);
   const [myBlogs, setMyBlogs] =useState([]);
+  const [user, setUser] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
 
-  let user = false;
+  const childToParent = (childdata) => {
+    console.log(childdata);
+    setUser(childdata.isResponse);
+    setUserEmail(childdata.email);
+  
+  }
+
+  console.log(userEmail);
+
+  
   
 
-  const userEmail = 'john@gmail.com';
+  
 
   useEffect(()=>{
 
@@ -32,7 +43,7 @@ function App() {
 
   useEffect(()=>{
 
-    axios.get("http://localhost:5000/api/allBlogs/"+userEmail)
+    axios.get("http://localhost:5000/api/myBlogs/"+userEmail)
           .then(response => {setMyBlogs(response.data);
                console.log(response.data)})
           .catch(err=>console.log(err));
@@ -46,10 +57,10 @@ function App() {
 
       <Routes>
         <Route path="/">
-          <Route path= "/" element={user ? <Home allBlogs={allBlogs} />: <Login/>}/>
-          <Route path= "/login" element={user ? <Home allBlogs={allBlogs}/>:<Login/>}/>
-          <Route path= "/myblogs" element={user ? <MyBlobs myBlogs = {myBlogs}/>: <Login/>}/>
-          <Route path= "/write_blog" element={user ? <WriteBlog/>: <Login/>}/>
+          <Route path= "/" element={user ? <Home allBlogs={allBlogs} />: <Login childToParent={childToParent}/>}/>
+          <Route path= "/login" element={user ? <Home allBlogs={allBlogs}/>:<Login childToParent={childToParent}/>}/>
+          <Route path= "/myblogs" element={user ? <MyBlobs myBlogs = {myBlogs}/>: <Login childToParent={childToParent}/>}/>
+          <Route path= "/write_blog" element={user ? <WriteBlog/>: <Login childToParent={childToParent}/>}/>
           <Route path= "/register" element={user ?<Home allBlogs={allBlogs}/>: <Registration/>}/>
         </Route>
        
