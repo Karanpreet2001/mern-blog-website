@@ -16,6 +16,7 @@
   
 
 }
+
  .eachMyBlog{
   width: 100%;
   margin-left: 25px;
@@ -58,3 +59,23 @@ color: black;
    
 }
  
+
+
+.noBlogs{
+  color: grey;
+  margin: 30px;
+}
+.create-a-blog{
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  font-weight: 500;
+  padding: 10px 12px;
+  font-size: 0.9em;
+  margin: 30px;
+  transition: all 0.4s;
+}
+.create-a-blog:hover{
+  background-color: rgb(127, 18, 230);
+  border-radius: 10px;
+}

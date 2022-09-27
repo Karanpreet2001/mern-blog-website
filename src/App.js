@@ -47,7 +47,7 @@ function App() {
           .then(response => {setMyBlogs(response.data);
                console.log(response.data)})
           .catch(err=>console.log(err));
-  },[])
+  },[]);
 
 
 

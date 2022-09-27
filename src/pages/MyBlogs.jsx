@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import NavBar from "../componets/Navbar";
 import "./myblogs.css";
 
+
 const MyBlobs = ({myBlogs}) => {
+
+    const navigate = useNavigate();
 
     const createTags =(tags)=>{
 
@@ -18,6 +22,12 @@ const MyBlobs = ({myBlogs}) => {
 
     }
 
+    const goToWriteBlog =(e)=>{
+            e.preventDefault();
+            navigate("/write_blog");
+
+    }
+
     const getDate = (date) =>{
         
         let datePosted = new Date(date);
@@ -29,6 +39,16 @@ const MyBlobs = ({myBlogs}) => {
         return diffDays+" days ago";
     }
 
+    if(myBlogs.length ===0){
+        return (
+            <>
+            <NavBar />
+            <h1 className="noBlogs">No Blogs Exits</h1>
+            <button className="create-a-blog" onClick={goToWriteBlog}>Create a Blog</button>
+
+            </>
+        )
+    }
 
     return ( <>
     <NavBar/>
@@ -36,6 +56,7 @@ const MyBlobs = ({myBlogs}) => {
     <div className="wrapper">
 
     <div className='wrapperBlog'>
+        
 
         {   myBlogs ? (
                 myBlogs.map((blogs)=>(
